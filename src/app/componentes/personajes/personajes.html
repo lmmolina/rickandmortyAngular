@@ -1,0 +1,18 @@
+<div class="cards-column personajes">
+  <h1>{{ cargando }}</h1>
+  @if (cargando) {
+  <img src="/cargando.gif" alt="Cargando" />
+  }@else{ @for (item of items|async; track $index) {
+  <mat-card class="card" #cardElement (click)="onSelect(item.id, $event)">
+    <img
+      mat-card-image
+      [src]="item.image"
+      alt="{{ item.name }}"
+      loading="lazy"
+    />
+    <mat-card-content>
+      <p>{{ item.name }}</p>
+    </mat-card-content>
+  </mat-card>
+  }}
+</div>

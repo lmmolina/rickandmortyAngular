@@ -1,0 +1,12 @@
+<div class="cards-column">
+  @for (item of items|async; track $index) {
+  <mat-card class="card">
+    <mat-card-content>
+      <h3>{{ item.name }}</h3>
+      <p>
+        {{ item.air_date }} <b>{{ item.episode }}</b>
+      </p>
+    </mat-card-content>
+  </mat-card>
+  }
+</div>
